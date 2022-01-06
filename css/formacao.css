@@ -1,0 +1,159 @@
+.formacao {
+    background: #141414;
+    color: #ffffff;
+}
+
+.formacao-container {
+    max-width: 1200px;
+    padding: 120px 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    position: relative; /*Para poder funcionar o pseudoelemento, todo elemento pai do "::before" ou "::after" precisa ser position relative*/
+
+}
+
+.formacao-container::after {
+    content: "";
+    display: block;
+    width: 130px;
+    height: 100px;
+    background: url(/Portfolio/img/detalhe.svg) no-repeat center;
+    position: absolute;
+    bottom: -50px;
+    left: 20px;
+
+}
+
+.formacao .subtitulo {
+    color: #000000;
+    max-width: 5ch; /*Disposição melhor das letras*/
+
+}
+
+.formacao-texto {
+    font-size: 1.5rem;
+    line-height: 1.33;
+    max-width: 40ch; /*Cerca de 40 caracteres por linha de paragrafo, ai ele n cresce mt pros lados*/
+    margin-bottom: 60px;
+    color: #a3a3a3;
+}
+.formacao-texto strong {
+   color: #ffffff;
+}
+
+.faculdade-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.faculdade {
+    background: #000000;
+    padding: 20px;
+    color: #ffffff;
+    flex: 1; /*Ter o mesmo tamanho, e não aumentar a caixa demais*/
+    border-radius: 4px;
+    display: flex;      /*Macete pois como a faculdade-tipo é um span, precisa fazer isso para que a margin e padding se aplique a ele*/
+    flex-direction: column; /*Macete pois como a faculdade-tipo é um span, precisa fazer isso para que a margin e padding se aplique a ele*/
+}
+
+.faculdade-tipo {
+    font-size: .875rem;
+    text-transform: uppercase;
+    color: #a3a3a3;
+    margin-bottom: 10px;
+}
+
+.faculdade-curso {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    flex: 1; /*Serve para empurrar a instituição la pra baixo da caixa do flexx*/
+    position: relative; /*Para criar o ::before*/
+}
+
+.faculdade-curso::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(#b6f829, #67dd0a);
+    position: absolute; /*Tirar do fluxo do grid*/
+    left: -25px; 
+}
+
+.faculdade-local {
+    font-size: 1.125rem;
+    color: #a3a3a3;
+}
+
+.cursos {
+    margin-bottom: 60px;
+}
+
+.formacao-extra h3 {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: #8f8f8f;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    position: relative; /*Para posicionar o ícone*/
+}
+
+.formacao-extra h3::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: -36px;
+    top: -4px;
+    
+}
+
+.cursos h3::before {
+    background: url(/Portfolio/img/cursos.svg) no-repeat center center;
+}
+
+.idiomas h3::before {
+    background: url(/Portfolio/img/idiomas.svg) no-repeat center center;
+}
+
+.formacao-extra li {
+    color: #ffffff;
+    font-size: 1.125rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.formacao-extra span {
+    color: #8f8f8f;
+}
+
+.cursos li {
+    display: flex; /*Para colocar o span e o texto normal de lados opostos*/
+    justify-content: space-between;
+}
+
+@media (max-width: 800px) {
+.formacao-container{
+    grid-template-columns: 1fr;
+    padding: 60px 20px;
+    gap: 40px;
+
+}
+.formacao .subtitulo {
+    color: #ffffff;
+}
+.formacao-texto {
+    font-size: 1.125rem;
+}
+.formacao-extra h3::before {
+    position: initial; /*Valor inicial deles que no caso é estático, ou seje, não sofre as alterações de "top" ou "left"*/
+    margin-bottom: 10px;
+
+}
+}

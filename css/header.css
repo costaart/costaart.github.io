@@ -1,0 +1,38 @@
+/*CSS RESPONSÁVEL POR SETAR OS VALORES QUE SERÃO USADOS NO HEADER*/
+.header {
+    display: flex; /*Um item ao lado do outro*/ 
+    max-width: 1200px; /*Limita o conteudo do site para não deixar muitos espaços em branco*/
+    margin: 0 auto; /*Quando a tela crescer maior que o limite definido (1200px), ele fica centralizado*/
+    justify-content: space-between; /*Espaçar os itens do header (a logo em um canto, e os links em outro)*/
+    align-items: center; /*Centraliza os itens do header no meio (verticalmente) */
+    padding: 40px 20px; /*Desgrudar da tela*/
+}
+
+.header-menu {
+    display: flex; /*Um item do menu ao lado do  outro, pois não basta setar só o .header como flex*/
+    gap: 10px;
+    flex-wrap: wrap; /*Caso a tela diminua mas que o item como um todo, ela quebre em outra linha*/
+    justify-content: center; /*Centraliza os itens ao centro*/ 
+}
+
+.header-menu a {
+    font-size: 1.125rem; /*Basta dividir o número em px por 16, no caso era 18/16 = 1.125em*/
+    line-height: 1.3rem;
+    padding: 10px 20px; /*É bom colocar padding em links pois aumenta a área de contato*/
+    text-decoration: none;
+    color: #141414;
+    display: block; /*Pegar os valores do padding (não entendi direito confeço)*/
+}
+
+@media (max-width: 800px) { /*Traduz para: ABAIXO DE 800PX APLIQUE ISSO. Usado para responsividade*/
+    .header {
+        flex-direction: column; /*Abaixo de 800px, muda a orientação do header (que era da direita pra esquerda - em linha - para coluna*/
+        gap: 40px;
+        padding: 20px;
+    }
+    .header a {
+        background: #f5f5f5;        /*Nos celulares, o menu vai ficar com cara de "botão"*/
+        border-radius: 4px;
+
+    }
+}

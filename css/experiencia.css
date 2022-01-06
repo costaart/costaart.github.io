@@ -1,0 +1,115 @@
+.experiencia {
+    max-width: 1200px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+
+}
+
+.experiencia .subtitulo {
+    color: #e0e0e0; /*Como está reaproveitando a classe subtitulo no global, aqui serve para indicar expecificamente qual deseja mudar*/
+}
+
+.experiencia-texto {
+    font-size: 1.5rem;
+    line-height: 1.33;
+    max-width: 40ch; /*Cerca de 40 caracteres por linha de paragrafo, ai ele n cresce mt pros lados*/
+    margin-bottom: 60px;
+    color: #525252;
+}
+
+.experiencia-texto strong {
+    color: #141414;
+}
+
+.empresa {
+    display: grid;  /*Deixar as infrmações divididas em colunas*/
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    background: #f5f5f5;
+    margin-bottom: 20px; /*Separar as empresas*/
+    border-radius: 4px;
+    position: relative; /*Precisa setar relative para que o absolute (ano) funciona, pois ele precisa de um "pai", se não ele fica parado em cima do h3*/
+    gap: 10px 20px; 
+}
+
+.empresa::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(#b6f829, #67dd0a);
+    position: absolute; /*Tirar do fluxo do grid*/
+    top: 20px;
+    left: -4px;    
+}
+.empresa-ano {
+    position: absolute; /*Deixar ele "nulo" ao interface */
+    top: 20px;
+    left: -100px;   /*Joga ele pro lado esquerdo*/
+    color: #525252;
+    font-size: .875rem;
+    width: 80px; /*Serve para criar uma caixa maior que o texto, já que como o position absolute cria uma caixa do tamanho exato do texto, dessa forma conseguimos alinhar a direita*/
+    text-align: right;
+}
+
+.empresa-titulo {
+    font-size: 1.125rem;
+    line-height: 1.1;
+    font-weight: bold;
+}
+.empresa-texto {
+    font-size: .875rem;
+    color: #525252;
+    line-height: 1.4;
+}
+
+.empresa-habilidades {
+    display: flex;
+    margin: 5px;
+    align-content: start; /*O elemento não cresce pro tamanho do texto*/
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.empresa-habilidades li {
+    background: #ffffff;;
+    padding: 5px;
+    font-size: .875rem;
+    line-height: 1.4;   
+    border-radius: 4px;
+
+}
+
+@media (max-width: 800px) {
+    .experiencia {
+        grid-template-columns: 1fr; /*Quebra o grid para apenas uma coluna ao ser menor que 800px*/
+        gap: 20px;
+    }
+
+    .experiencia .subtitulo {
+        color: #141414;
+    }
+    .experiencia-texto {
+        font-size: 1.25rem;
+
+    }
+    .empresa-ano {
+        position: initial; /*Volta a ser parte do grid*/
+        width: initial;
+        text-align: left;
+        order: 1; /*Joga ele lá pra ultimo elemento, pois todos sao importancia 0, e 0 vem primeiro que 1*/
+    }
+    .empresa-ano::before {
+        content: "Ano: "; /*Da significado ao número sozinho*/
+    }
+}
+
+@media (max-width: 400px) {
+    .empresa {
+        grid-template-columns: 1fr;
+    }
+
+}

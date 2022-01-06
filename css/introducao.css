@@ -1,0 +1,70 @@
+.introducao {
+    max-width: 1200px; /*Igual o limite padrão do site, bom colocar em todos as sessões do site para ficar harmonico*/
+    padding: 40px 20px; /*Desgrudar da margem*/
+    margin: 0 auto; /*Quando a tela crescer maior que o limite definido (1200px), ele fica centralizado*/
+    display: grid; /*Setar o grid para mexer nos elementos*/
+    grid-template-columns: 1fr 2fr; /*Ou seja, possui duas colunas principais, no qual a da direita é duas vezes maior que da esquerda.*/
+    gap: 80px; /*Distância boa entre imagem e o conteúdo*/
+    align-items: center; /*Alinhar o conteúdo ao centro*/
+}
+
+.introducao h1 {
+    font-size: 4.5rem; /*Equivale a VEZES*16px*/
+    line-height: 1.125; 
+    margin-bottom: 30px;
+    position: relative; /*O elemento PAI do detalhe, precisa ser relative, para controlar a posição (top, right, left) pois será em relação ao pai (no caso o h1)*/
+
+}
+
+.introducao h1::before {        /*Ou seja, adiciona um elemento atras do H1 (no caso, é um detalhe)*/
+    content: ""; /*Todo elemento before ou after precisa ter um conteudo*/
+    display: block; /*Para ocupar uma linha*/
+    width: 130px;   /*Esses valores é pro detalhe nao ficar muito grande, limitar o tamanho dele*/
+    height: 100px;
+    background: url(/Portfolio/img/detalhe.svg) no-repeat center;
+    position: absolute; /*Trás ele pra frente do elemento, e não fica mais na linha exclusivo*/
+    top: -15px; /*Fica posicionado no começo do elemento pai*/
+    left: -40px; /*É bom ficar testando qual posicão fica melhor até achar*/
+    z-index: -1; /*Valor negativo para jogar o elemento atras de tudo*/
+}
+
+.introducao p {
+    font-size: 1.5rem;
+    color: #525252;
+}
+
+@media (max-width: 1000px){ /*Quando chegar abaixo de 1000px, o texto que estava quebrando errado, não vai mais*/
+    .introducao h1 {
+        font-size: 3rem; /*Nesse caso, a imagem e o titulo diminuem proporcionalmente agora pois ele está menor*/
+    }
+}
+
+@media (max-width: 800px){
+    .introducao {
+        grid-template-columns: 1fr 1fr; /*Em telas menores, o grid vai ter 2 colunas de tamanhos iguais*/
+        gap: 20px;
+    }
+    .introducao h1 {
+        font-size: 2rem; /*Nesse caso, a imagem e o titulo diminuem proporcionalmente agora pois ele está menor*/
+    }
+
+    .introducao p {
+        font-size: 1rem;
+        color: #525252;
+    }
+
+    .introducao h1::before { 
+        width: 30px;
+        height: 10px;
+        left: 0px;
+    }
+}
+
+@media (max-width: 400px) { /*Abaixo de 400, retirar a foto pois não é muito relevante*/
+    .introducao {
+        grid-template-columns: 1fr; /*O conteudo da introdução fica em apenas uma coluna na tela pequena*/
+    }
+    .introducao img {
+        display: none;
+    }
+}

@@ -1,0 +1,41 @@
+/*CSS RESPONSÁVEL POR SETAR OS VALORES QUE SERÃO USADOS EM TODO O SITE*/
+/*É importante resetar os valores para ter maior liberdade, e não adianta fazer só no body, precisa fazer em alguns elementos pois eles não herdam*/
+
+body {
+    font-family: 'Fira Sans', Arial, sans-serif;
+    margin: 0px;
+    padding: 0;
+    color: #141414;
+}
+
+h1, h2, h3, p {
+    margin: 0px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.subtitulo {
+    font-size: 8rem;
+    line-height: 1;
+    text-transform: uppercase;
+    max-width: 4ch; /*Quatro caracteres em media por tamanho, usado pra quebrar*/
+    word-break: break-all; /*Quebrar as letras da palavra, diferente da tag <br>*/
+}
+
+@media (max-width: 800px) {
+    .subtitulo {            /*Muda a classe subtitulo para ficar melhor visivel em  telas menores*/
+        font-size: 3rem;
+        color: #141414;
+        text-transform: capitalize; 
+        max-width: initial !important; /*valor inicial dele, sem mudanças, o important serve para sobescrever qualquer valor (no caso, na sessao formação, foi usado o mesmo subtiulo, e lá como o arquivo carregou depois, não estava aplicando o initial do arquivo .global*/
+    }
+}
