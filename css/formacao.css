@@ -115,11 +115,11 @@
 }
 
 .cursos h3::before {
-    background: url(/Portfolio/img/cursos.svg) no-repeat center center;
+    background: url(./img/cursos.svg) no-repeat center center;
 }
 
 .idiomas h3::before {
-    background: url(/Portfolio/img/idiomas.svg) no-repeat center center;
+    background: url(./img/idiomas.svg) no-repeat center center;
 }
 
 .formacao-extra li {
