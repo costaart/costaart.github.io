@@ -103,7 +103,17 @@
     position: relative; /*Para posicionar o ícone*/
 }
 
-.formacao-extra h3::before {
+.formacao-extra .cursos h3::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: -36px;
+    top: -4px;
+    
+}
+.formacao-extra .idiomas h3::before {
     content: "";
     display: block;
     width: 24px;
@@ -114,18 +124,14 @@
     
 }
 
-.cursos h3::before {
-    background-image: url(../img/cursos.svg);
-    background-repeat:  no-repeat;
-    background-position: center;
+.formacao-extra .cursos h3::before {
+    background: url(img/cursos.svg) no-repeat center;
     
     
 }
 
 .idiomas h3::before {
-    background-image: url(../img/idiomas.svg);
-    background-repeat:  no-repeat;
-    background-position: center;
+    background: url(img/idiomas.svg) no-repeat center;
     
 }
 
