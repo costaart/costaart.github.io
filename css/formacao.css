@@ -126,11 +126,10 @@
 
 .formacao-extra .cursos h3::before {
     background: url(img/cursos.svg) no-repeat center;
-    
-    
+        
 }
 
-.idiomas h3::before {
+.formacao-extra .idiomas h3::before {
     background: url(img/idiomas.svg) no-repeat center;
     
 }
