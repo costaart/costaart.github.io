@@ -115,13 +115,17 @@
 }
 
 .cursos h3::before {
-    background: url(/img/cursos.svg) no-repeat center center;
+    background-image: url(../img/cursos.svg);
+    background-repeat:  no-repeat;
+    background-position: center;
     
     
 }
 
 .idiomas h3::before {
-    background: url(/img/idiomas.svg) no-repeat center center;
+    background-image: url(../img/idiomas.svg);
+    background-repeat:  no-repeat;
+    background-position: center;
     
 }
 
